@@ -1,0 +1,21 @@
+
+
+.card {
+  margin-top: 15%;
+  padding: 2rem;
+  width: 60vw;
+  height: 60vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 1rem;
+  box-shadow: .2rem .2rem .5rem .05rem var(--moonGray);
+
+}
+
+.profileImg {
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+}

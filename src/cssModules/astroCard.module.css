@@ -1,0 +1,121 @@
+.container {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  margin: 1rem;
+  animation: fadeIn 1.5s;
+}
+
+.nameCnt, .craftCnt {
+  position: absolute;
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+
+.name, .nameCnt {
+  position: absolute;
+  padding: 1rem;
+  background-color: rgba(255,255,255,.02);
+  height: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: .2rem;
+}
+
+.craft, .craftCnt {
+  position: absolute;
+  padding: 1rem;
+  background-color: rgba(255,255,255,.02);
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  border-bottom-left-radius: .2rem;
+  border-bottom-right-radius: .2rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
+}
+
+.satellite {
+  width: 14.5vw;
+  height: 9.5vw;
+  border-radius: .5rem;
+}
+
+.avatar, .satellite {
+  box-shadow: 0 0 .5rem .01rem var(--moonGray);
+}
+
+.dnBtn, .upBtn {
+  position: absolute;
+  background: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  bottom: .5rem;
+  right: .5rem;
+  border-radius: 50%;
+  color: var(--burntOrange);
+  opacity: .5;
+  z-index: 2;
+}
+
+.upBtn {
+  transform: rotateX(.5turn);
+}
+
+.dnBtn:hover, .upBtn:hover {
+  transition: .5s;
+  cursor: pointer;
+  box-shadow: 0 0 .5rem .1rem #f75819;
+}
+
+.craftDown {
+  animation: down .5s forwards
+}
+
+.craftUp {
+  animation: up .5s forwards
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes down {
+  0% {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
