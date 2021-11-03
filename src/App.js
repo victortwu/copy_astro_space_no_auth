@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 //import { GoogleLogin } from 'react-google-login'
 //import { gapi, loadAuth2 } from 'gapi-script'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import axios from 'axios'
 
 //-------- components and pages ---------------
 import Nav from './components/Nav'
@@ -51,13 +52,24 @@ const [astronauts, setAstronauts] = useState([])
   //    }
   // }
 
+  // useEffect(async()=> {
+  //   try {
+  //     const res = await fetch(astroUrl)
+  //     const data = await res.json()
+  //     setAstronauts(data.people)
+  //   }
+  //   catch(err) {
+  //     console.error(err.message)
+  //   }
+  // }, [])
+
   useEffect(async()=> {
     try {
-      const res = await fetch(astroUrl)
-      const data = await res.json()
-      setAstronauts(data.people)
+      const res = await axios.get(astroUrl)
+      setAstronauts(res.data.people)
+  
     }
-    catch(err) {
+    catch(err){
       console.error(err.message)
     }
   }, [])
