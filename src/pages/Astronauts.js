@@ -16,7 +16,7 @@ const Astronauts = (props) => {
 
   return(
     <div className={style.container}>
-        <div className={style.title}><h1>Astronuats in <span>Space</span></h1></div>
+        <div className={style.title}><h1>Astronauts in <span>Space</span></h1></div>
 
         <div className={style.cards}>
 
