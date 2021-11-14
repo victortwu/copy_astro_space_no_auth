@@ -54,7 +54,7 @@ const [astronauts, setAstronauts] = useState([])
 
   useEffect(async()=> {
     try {
-      const res = await fetch('https://astro-proxy.herokuapp.com/astros')
+      const res = await fetch(astroUrl)
       const data = await res.json()
       setAstronauts(data.people)
     }

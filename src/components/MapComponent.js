@@ -22,8 +22,8 @@ const MapComponent = (props) => {
         const res = await fetch(issUrl)
         const data = await res.json()
 
-        const latStr = await parseFloat(data.iss_position.latitude).toFixed(4)
-        const longStr = await parseFloat(data.iss_position.longitude).toFixed(4)
+        const latStr = parseFloat(data.iss_position.latitude).toFixed(4)
+        const longStr = parseFloat(data.iss_position.longitude).toFixed(4)
 
         const lat = parseFloat(latStr)
         const long = parseFloat(longStr)
